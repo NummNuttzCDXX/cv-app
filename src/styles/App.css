@@ -1,0 +1,30 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  font-size: clamp(16px, 2vmin, 40px);
+
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.form-containers {
+  max-width: 50vw;
+  min-width: 40vw;
+  margin-left: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
