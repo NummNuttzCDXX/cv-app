@@ -1,0 +1,49 @@
+/* Dropdown is closed */
+.dropdown {
+	width: 100%;
+
+	display: none;
+	animation: dropup .1s linear;
+	transform-origin: top;
+}
+
+/* dropdown is open | dropped down */
+.dropdown.dropped {
+	display: inline-block;
+	animation: dropdown .1s ease;
+}
+
+@keyframes dropdown {
+	from {
+		transform: scaleY(0);
+		display: none;
+	}
+
+	to {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes dropup {
+	from {
+		transform: scaleY(1);
+		display: inline-block;
+	}
+
+	to {
+		transform: scaleY(0);
+		display: none;
+	}
+}
+
+.dropdown-menu {
+	padding: 0 1rem;
+}
+
+main .dropdown-menu {
+	border: .1rem solid aliceblue;
+}
+
+.dropdown-menu h2 {
+	cursor: pointer;
+}
