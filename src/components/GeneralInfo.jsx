@@ -12,12 +12,12 @@ export default function GeneralInfo({
 	return (
 		<>
 			<form>
-				<label>First Name:
-					<input value={first} onChange={onChangeFirst}
+				<label>First Name: <span>* Required</span>
+					<input value={first} onChange={onChangeFirst} required
 						placeholder="Enter First Name" />
 				</label>
 				<label> Last Name: <span>* Required</span>
-					<input value={last} onChange={onChangeLast}
+					<input value={last} onChange={onChangeLast} required
 						placeholder="Enter Last Name" />
 				</label>
 

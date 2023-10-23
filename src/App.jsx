@@ -3,6 +3,7 @@ import './styles/App.css';
 import GeneralInfo from './components/GeneralInfo';
 import Header from './components/Head';
 import Doc from './components/Doc';
+import Education from './components/Education';
 import Dropdown from './components/Dropdown';
 
 /**
@@ -49,6 +50,10 @@ function App() {
 							email={email} onChangeEmail={onChangeEmail}
 							phone={phone} onChangePhone={onChangePhone}
 						/>
+					</Dropdown>
+
+					<Dropdown title={'Education'} name={'education'}>
+						<Education />
 					</Dropdown>
 				</div>
 

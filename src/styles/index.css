@@ -68,6 +68,12 @@ label {
   display: flex;
   flex-direction: column;
   gap: .2rem;
+
+  position: relative;
+}
+
+input {
+  font-size: .9em;
 }
 
 /* Utility classes */
