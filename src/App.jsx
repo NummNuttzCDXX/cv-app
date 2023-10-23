@@ -43,7 +43,7 @@ function App() {
 			<main>
 				{/* Will hold all of the forms */}
 				<div className='form-containers'>
-					<Dropdown title={'Personal Information'} open={true}>
+					<Dropdown title={'Personal Information'} open={true} name={'general'}>
 						<GeneralInfo first={first} onChangeFirst={onChangeFirst}
 							last={last} onChangeLast={onChangeLast}
 							email={email} onChangeEmail={onChangeEmail}

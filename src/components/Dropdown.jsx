@@ -4,7 +4,7 @@
 import {useState} from 'react';
 import '../styles/Dropdown.css';
 
-function Dropdown({title, children, open=false}) {
+function Dropdown({title, children, open=false, name}) {
 	// Declare Drop state (true = open, false = close)
 	const [drop, setDrop] = useState(open);
 
@@ -16,7 +16,7 @@ function Dropdown({title, children, open=false}) {
 	}
 
 	return (
-		<div className="dropdown-menu round-light">
+		<div className={'dropdown-menu round-light ' + name}>
 			<h2 onClick={handleDrop}>{title}</h2>
 			<div className={dropClass}>
 				{children}
