@@ -46,4 +46,16 @@ main .dropdown-menu {
 
 .dropdown-menu h2 {
 	cursor: pointer;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dropdown-menu h2 span.msg {
+	font-size: .8rem;
+	font-weight: 500;
+
+	color: rgb(255, 40, 40);
 }

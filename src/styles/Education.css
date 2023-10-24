@@ -1,3 +1,35 @@
+.school-names {
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+.school-names ul {
+	padding: 0;
+}
+
+.school-names li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.icon-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1em;
+}
+
+main .education img {
+	width: 1.5em;
+	cursor: pointer;
+
+	/* Add color (accent) */
+	filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(54deg) brightness(107%) contrast(109%);
+	opacity: 0.75;
+}
+
 .btn-container {
 	grid-column: 1 / -1;
 	

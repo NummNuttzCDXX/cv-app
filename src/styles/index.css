@@ -79,6 +79,8 @@ input {
 /* Utility classes */
 .round-light { border-radius: .5rem; }
 
+.hide { visibility: hidden; }
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

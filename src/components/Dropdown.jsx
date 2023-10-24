@@ -17,7 +17,7 @@ function Dropdown({title, children, open=false, name}) {
 
 	return (
 		<div className={'dropdown-menu round-light ' + name}>
-			<h2 onClick={handleDrop}>{title}</h2>
+			<h2 onClick={handleDrop}>{title} <span className='msg hide'></span> </h2>
 			<div className={dropClass}>
 				{children}
 			</div>
