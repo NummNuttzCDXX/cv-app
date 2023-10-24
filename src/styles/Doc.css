@@ -17,3 +17,22 @@
 
 	border-bottom: .3rem solid aliceblue;
 }
+
+.document .education {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.document .education h2 {
+	grid-column: 1 / -1;
+}
+
+.document ul {
+	list-style: none;
+	padding: 0;
+}
+
+.document .education .school {
+	font-weight: bold;
+	font-size: 1.1em;
+}

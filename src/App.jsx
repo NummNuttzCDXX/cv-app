@@ -158,7 +158,8 @@ function App() {
 					</Dropdown>
 				</div>
 
-				<Doc fullName={fullName} email={email} phone={phone}/>
+				<Doc fullName={fullName} email={email} phone={phone}
+					educationArr={educationArr} />
 			</main>
 		</>
 	);
