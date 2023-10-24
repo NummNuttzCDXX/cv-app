@@ -5,9 +5,14 @@ import '../styles/Doc.css';
 export default function Doc({fullName, email, phone}) {
 	return (
 		<div className="document">
-			<div className="name">{fullName}</div>
-			<div className="email">{email}</div>
-			<div className="phone">{phone}</div>
+			<div className="head">
+				<div className="contact">
+					<div className="email">{email}</div>
+					<div className="phone">{phone}</div>
+				</div>
+
+				<div className="name">{fullName}</div>
+			</div>
 		</div>
 	);
 }
