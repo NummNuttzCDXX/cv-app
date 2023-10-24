@@ -158,7 +158,10 @@ function App() {
 					</Dropdown>
 				</div>
 
-				<Doc fullName={fullName} email={email} phone={phone}
+				{/* Document section -- Header has default values if blank */}
+				<Doc fullName={fullName == ' ' ? 'Name' : fullName}
+					email={email || 'fake@fakemail.com'}
+					phone={phone || '555-555-5555'}
 					educationArr={educationArr} />
 			</main>
 		</>
