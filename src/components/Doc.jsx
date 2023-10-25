@@ -3,7 +3,7 @@
 import '../styles/Doc.css';
 import {formatDate} from '../modules/utility.js';
 
-export default function Doc({fullName, email, phone, educationArr}) {
+export default function Doc({fullName, email, phone, educationArr, expArr}) {
 	return (
 		<div className="document">
 			<div className="head">
@@ -20,6 +20,12 @@ export default function Doc({fullName, email, phone, educationArr}) {
 				{educationArr.map((data) => // Render EduSections for every school
 					<EducationSection key={data.id} education={data} />)}
 			</div>
+
+			<div className="experience">
+				<h2>Work Experience</h2>
+				{expArr.map((item) => <ExperienceSection experience={item}
+					key={item.id} />)}
+			</div>
 		</div>
 	);
 }
@@ -30,7 +36,8 @@ function EducationSection({education}) {
 			<div className="time-place-container">
 				<ul>
 					<li className='date'>{education.start &&
-						formatDate(education.start) +' - '+ formatDate(education.end)}</li>
+						formatDate(education.start) +' - '+ formatDate(education.end)}
+					</li>
 					<li className="place"> {education.location} </li>
 				</ul>
 			</div>
@@ -39,6 +46,29 @@ function EducationSection({education}) {
 				<ul>
 					<li className="school">{education.school}</li>
 					<li className="degree">{education.degree}</li>
+				</ul>
+			</div>
+		</>
+	);
+}
+
+function ExperienceSection({experience}) {
+	return (
+		<>
+			<div className="time-place-container">
+				<ul>
+					<li className="date"> {experience.start &&
+						formatDate(experience.start) + ' - ' + formatDate(experience.end)}
+					</li>
+					<li className="place"> {experience.location} </li>
+				</ul>
+			</div>
+
+			<div className="exp-info">
+				<ul>
+					<li className="company"> {experience.company} </li>
+					<li className="title"> {experience.title} </li>
+					<li className="desc"> {experience.desc} </li>
 				</ul>
 			</div>
 		</>

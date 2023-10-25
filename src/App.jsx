@@ -6,6 +6,7 @@ import Header from './components/Head';
 import Doc from './components/Doc';
 import Education from './components/Education';
 import Dropdown from './components/Dropdown';
+import Experience from './components/experience';
 
 /**
  * Create app
@@ -127,6 +128,116 @@ function App() {
 		clearEducationInputs();
 	}
 
+	// Experience
+	// Input states
+	const [company, setCompany] = useState('');
+	const [title, setTitle] = useState(''); // Job Title
+	const [expStart, setExpStart] = useState('');
+	const [expEnd, setExpEnd] = useState('');
+	const [expLocation, setExpLocation] = useState('');
+	const [expDesc, setExpDesc] = useState('');
+	const [expArr, setExpArr] = useState([{
+		company: 'Umbrella Corp',
+		title: 'Viral Specialist',
+		start: '4/13/2010',
+		end: new Date,
+		location: 'Classified',
+		desc: 'Classified',
+		id: uuid(),
+	}]);
+
+	// Input handlers
+	const expHandlers = (() => {
+		function handleCompany(e) {
+			setCompany(e.target.value);
+		}
+
+		function handleTitle(e) {
+			setTitle(e.target.value);
+		}
+
+		function handleStart(e) {
+			setExpStart(e.target.value);
+		}
+
+		function handleEnd(e) {
+			setExpEnd(e.target.value);
+		}
+
+		function handleLocation(e) {
+			setExpLocation(e.target.value);
+		}
+
+		function handleDesc(e) {
+			setExpDesc(e.target.value);
+		}
+
+		function handleEdit(id) {
+			const index = expArr.findIndex((item) => item.id == id);
+			const newArr = [...expArr];
+
+			// Edit object at `index`
+			newArr[index].company = company;
+			newArr[index].title = title;
+			newArr[index].start = expStart;
+			newArr[index].end = expEnd;
+			newArr[index].location = expLocation;
+			newArr[index].desc = expDesc;
+
+			// Update array state and clear inputs
+			setExpArr(newArr);
+			clearInputs();
+		}
+
+		function clearInputs() {
+			setCompany('');
+			setTitle('');
+			setExpStart('');
+			setExpEnd('');
+			setExpLocation('');
+			setExpDesc('');
+			// Clear msg box
+			document.querySelector('.exp span.msg').textContent = '';
+		}
+
+		function handleDelete(id) {
+			setExpArr(expArr.filter((item) => item.id != id));
+		}
+
+		function handleAdd() {
+			/* Set Experience Array to be a new array
+			using spread syntax and add new object to the array */
+			setExpArr([...expArr, {
+				company: company,
+				title: title,
+				start: expStart,
+				end: expEnd,
+				location: expLocation,
+				desc: expDesc,
+				id: uuid(),
+			}]);
+
+			clearInputs();
+		}
+
+		function setInputs(id) {
+			// Get object from arr
+			const item = expArr.find((item) => item.id == id);
+
+			// Set inputs to values
+			setCompany(item.company);
+			setTitle(item.title);
+			setExpStart(item.start);
+			setExpEnd(item.end);
+			setExpLocation(item.location);
+			setExpDesc(item.desc);
+		}
+
+		return {handleCompany, handleTitle, handleStart, handleEnd,
+			handleLocation, handleDesc, handleEdit, clearInputs, handleDelete,
+			handleAdd, setInputs};
+	})();
+
 	return (
 		<>
 			<Header/>
@@ -156,13 +267,31 @@ function App() {
 							onEdit={setEducationInputs}
 							handleEdit={handleEditEducation} />
 					</Dropdown>
+
+					<Dropdown title={'Experience'} name={'exp'}>
+						<Experience company={company}
+							handleCompany={expHandlers.handleCompany}
+							title={title} handleTitle={expHandlers.handleTitle}
+							start={expStart} handleStart={expHandlers.handleStart}
+							end={expEnd} handleEnd={expHandlers.handleEnd}
+							location={expLocation}
+							handleLocation={expHandlers.handleLocation}
+							desc={expDesc} handleDesc={expHandlers.handleDesc}
+							expArr={expArr}
+							onEdit={expHandlers.setInputs}
+							handleEdit={expHandlers.handleEdit}
+							onCancel={expHandlers.clearInputs}
+							onDelete={expHandlers.handleDelete}
+							onAdd={expHandlers.handleAdd} />
+					</Dropdown>
 				</div>
 
 				{/* Document section -- Header has default values if blank */}
 				<Doc fullName={fullName == ' ' ? 'Name' : fullName}
 					email={email || 'fake@fakemail.com'}
 					phone={phone || '555-555-5555'}
-					educationArr={educationArr} />
+					educationArr={educationArr}
+					expArr={expArr} />
 			</main>
 		</>
 	);

@@ -1,13 +1,16 @@
-.school-names {
+.school-names,
+.companies {
 	font-size: 1.1em;
 	font-weight: 600;
 }
 
-.school-names ul {
+.school-names ul,
+.companies ul {
 	padding: 0;
 }
 
-.school-names li {
+.school-names li,
+.companies li {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -21,7 +24,8 @@
 	gap: 1em;
 }
 
-main .education img {
+main .education img,
+main .exp img {
 	width: 1.5em;
 	cursor: pointer;
 
