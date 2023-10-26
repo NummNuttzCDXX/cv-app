@@ -244,7 +244,7 @@ function App() {
 
 			<main>
 				{/* Will hold all of the forms */}
-				<div className='form-containers'>
+				<div className='form-containers round-light'>
 					<Dropdown title={'Personal Information'} open={true} name={'general'}>
 						<GeneralInfo first={first} onChangeFirst={onChangeFirst}
 							last={last} onChangeLast={onChangeLast}

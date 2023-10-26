@@ -4,14 +4,20 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--accent-white);
+  background-color: var(--main-black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  /* Colors */
+  --accent-white: rgba(255, 255, 255, 0.87);
+  --main-black: #242424;
+  --accent-black: #4e4e4e;
+  --secondary-black: #383838;
 }
 
 a {

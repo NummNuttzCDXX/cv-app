@@ -38,12 +38,14 @@
 
 .dropdown-menu {
 	padding: 0 1rem;
+	box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.55);
 }
 
 main .dropdown-menu {
 	width: 80%;
 	min-width: 33vw;
 	border: .1rem solid aliceblue;
+	background-color: var(--main-black);
 }
 
 .dropdown-menu h2 {
