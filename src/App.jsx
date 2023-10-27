@@ -7,6 +7,7 @@ import Doc from './components/Doc';
 import Education from './components/Education';
 import Dropdown from './components/Dropdown';
 import Experience from './components/experience';
+import Customize from './components/Customize';
 
 /**
  * Create app
@@ -238,6 +239,34 @@ function App() {
 			handleAdd, setInputs};
 	})();
 
+	// Customize
+	const [alignment, setAlignment] = useState('top');
+	const [color, setColor] = useState('#383838');
+	const [font, setFont] = useState('archivo');
+	const [fontSize, setFontSize] = useState(16);
+
+	// Customize component Event/State handlers Module
+	// For organization
+	const customizeHandlers = (() => {
+		function alignment(value) {
+			setAlignment(value);
+		}
+
+		function color(e) {
+			setColor(e.target.value);
+		}
+
+		function fontSize(e) {
+			setFontSize(e.target.value);
+		}
+
+		function font(e) {
+			setFont(e.target.value);
+		}
+
+		return {alignment, color, fontSize, font};
+	})();
+
 	return (
 		<>
 			<Header/>
@@ -284,6 +313,13 @@ function App() {
 							onDelete={expHandlers.handleDelete}
 							onAdd={expHandlers.handleAdd} />
 					</Dropdown>
+
+					<Dropdown title={'Customization'} name={'customize'}>
+						<Customize handleAlignment={customizeHandlers.alignment}
+							color={color} handleColor={customizeHandlers.color}
+							handleFont={customizeHandlers.font}
+							fontSize={fontSize} handleFontSize={customizeHandlers.fontSize} />
+					</Dropdown>
 				</div>
 
 				{/* Document section -- Header has default values if blank */}
@@ -291,7 +327,10 @@ function App() {
 					email={email || 'fake@fakemail.com'}
 					phone={phone || '555-555-5555'}
 					educationArr={educationArr}
-					expArr={expArr} />
+					expArr={expArr}
+					alignment={alignment}
+					accentColor={color}
+					font={font} fontSize={fontSize} />
 			</main>
 		</>
 	);

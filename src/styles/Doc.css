@@ -2,9 +2,48 @@
 	width: 50vw;
 	min-height: 100vh;
 	margin-right: 1rem;
-	padding: 1rem 2rem;
-	border: .1rem solid rgba(255, 255, 255, 0.87);
+	margin-bottom: 1rem;
 	box-sizing: border-box;
+	display: flex;
+
+	background-color: var(--accent-white);
+	color: var(--main-black);
+	box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, 0.55);
+}
+
+/* Alignment classes */
+.document.top {
+	flex-direction: column;
+	padding-bottom: 1rem;
+}
+
+.document.right {
+	flex-direction: row-reverse;
+}
+
+.document.left {
+	flex-direction: row;
+}
+
+.document.top > div {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.document > div {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.document .head {
+	padding-top: 1rem;
+
+	background-color: var(--secondary-black);
+	color: var(--accent-white);
+}
+
+.document .content {
+	flex: 1;
 }
 
 /* Contact info container */
@@ -15,13 +54,12 @@
 .document .name {
 	font-size: 1.8em;
 	margin: 1rem 0;
-
-	border-bottom: .3rem solid aliceblue;
 }
 
 .document .education, .document .experience {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	column-gap: 1rem;
 }
 
 .document h2 {

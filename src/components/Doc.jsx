@@ -3,10 +3,18 @@
 import '../styles/Doc.css';
 import {formatDate} from '../modules/utility.js';
 
-export default function Doc({fullName, email, phone, educationArr, expArr}) {
+export default function Doc({fullName, email, phone, educationArr, expArr,
+	alignment, accentColor, font, fontSize}) {
+	if (fontSize.length <= 0) fontSize = 16;
+
+	// Styles to be added to `.document`
+	const styles = {
+		fontSize: fontSize + 'px',
+	};
+
 	return (
-		<div className="document">
-			<div className="head">
+		<div className={`document ${alignment} ${font}`} style={styles} >
+			<div className="head" style={{backgroundColor: accentColor}} >
 				<div className="contact">
 					<div className="email">{email}</div>
 					<div className="phone">{phone}</div>
@@ -15,16 +23,17 @@ export default function Doc({fullName, email, phone, educationArr, expArr}) {
 				<div className="name">{fullName}</div>
 			</div>
 
-			<div className="education">
-				<h2>Education</h2>
-				{educationArr.map((data) => // Render EduSections for every school
-					<EducationSection key={data.id} education={data} />)}
-			</div>
-
-			<div className="experience">
-				<h2>Work Experience</h2>
-				{expArr.map((item) => <ExperienceSection experience={item}
-					key={item.id} />)}
+			<div className="content">
+				<div className="education">
+					<h2>Education</h2>
+					{educationArr.map((data) => // Render EduSections for every school
+						<EducationSection key={data.id} education={data} />)}
+				</div>
+				<div className="experience">
+					<h2>Work Experience</h2>
+					{expArr.map((item) => <ExperienceSection experience={item}
+						key={item.id} />)}
+				</div>
 			</div>
 		</div>
 	);

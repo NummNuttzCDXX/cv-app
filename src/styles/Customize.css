@@ -1,0 +1,97 @@
+nav {
+	padding-bottom: 1rem;
+
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+/* Alignment */
+nav + div {
+	padding-bottom: .8rem;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.alignment button {
+	padding: .5em 1em;
+}
+
+.align-visual {
+	width: 3rem;
+	height: 3rem;
+
+	border: 2px solid var(--accent-black);
+}
+
+.align-visual.top {
+	background-image: linear-gradient(to top, var(--accent-white) 50%, var(--secondary-black) 50%);
+}
+
+.align-visual.right {
+	background-image: linear-gradient(to right, var(--accent-white) 50%, var(--secondary-black) 50%);
+}
+
+.align-visual.left {
+	background-image: linear-gradient(to left, var(--accent-white) 50%, var(--secondary-black) 50%);
+}
+
+/* Color */
+.customize label {
+	width: fit-content;
+	align-items: center;
+}
+
+.color input {
+	appearance: none;
+
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+
+	border: none;
+	background-color: transparent;
+}
+
+.color input::-webkit-color-swatch {
+	border-radius: 50%;
+	border: .1rem solid var(--accent-white);
+}
+
+.color input::-moz-color-swatch {
+	border-radius: 50%;
+	border: .1rem solid var(--accent-white);
+}
+
+/* Font */
+.font {
+	flex-direction: column;
+	align-items: center;
+}
+
+.font input[type='number'] {
+	width: 5ch;
+	height: 1.1em;
+}
+
+.select-font {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.rubik {
+	font-family: Rubik;
+}
+
+.archivo {
+	font-family: Archivo;
+}
+
+.caveat {
+	font-family: Caveat;
+}
