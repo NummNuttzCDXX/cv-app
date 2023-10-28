@@ -76,9 +76,9 @@ export default function Experience({
 									{item.company}
 
 									<div className="icon-container">
-										<img src={editIcon} alt="Edit"
+										<img src={editIcon} className='icon' alt="Edit"
 											onClick={() => edit(item.id)} />
-										<img src={deleteIcon} alt="Delete"
+										<img src={deleteIcon} className='icon' alt="Delete"
 											onClick={() => onDelete(item.id)} />
 									</div>
 								</li>

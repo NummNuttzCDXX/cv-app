@@ -31,15 +31,15 @@ nav + div {
 }
 
 .align-visual.top {
-	background-image: linear-gradient(to top, var(--accent-white) 50%, var(--secondary-black) 50%);
+	background-image: linear-gradient(to top, var(--secondary-accent) 50%, var(--secondary-main) 50%);
 }
 
 .align-visual.right {
-	background-image: linear-gradient(to right, var(--accent-white) 50%, var(--secondary-black) 50%);
+	background-image: linear-gradient(to right, var(--secondary-accent) 50%, var(--secondary-main) 50%);
 }
 
 .align-visual.left {
-	background-image: linear-gradient(to left, var(--accent-white) 50%, var(--secondary-black) 50%);
+	background-image: linear-gradient(to left, var(--secondary-accent) 50%, var(--secondary-main) 50%);
 }
 
 /* Color */
@@ -61,12 +61,12 @@ nav + div {
 
 .customize input[type='color']::-webkit-color-swatch {
 	border-radius: 50%;
-	border: .1rem solid var(--accent-white);
+	border: .1rem solid var(--secondary-accent);
 }
 
 .customize input[type='color']::-moz-color-swatch {
 	border-radius: 50%;
-	border: .1rem solid var(--accent-white);
+	border: .1rem solid var(--secondary-accent);
 }
 
 /* Font */

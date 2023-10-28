@@ -28,10 +28,6 @@ main .education img,
 main .exp img {
 	width: 1.5em;
 	cursor: pointer;
-
-	/* Add color (accent) */
-	filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(54deg) brightness(107%) contrast(109%);
-	opacity: 0.75;
 }
 
 .btn-container {
@@ -51,5 +47,5 @@ label > span {
 	right: 0;
 
 	font-size: .8em;
-	color: rgba(216, 216, 216, 0.8);
+	color: var(--secondary-accent);
 }

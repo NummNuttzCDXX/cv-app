@@ -65,7 +65,7 @@ export default function Education({school, onChangeSchool, degree,
 							return (
 								<li key={item.id}> {item.name}
 									<div className="icon-container">
-										<img src={editIcon} className='edit-icon' alt='Edit Icon'
+										<img src={editIcon} className='edit-icon icon' alt='Edit'
 											onClick={() => {
 												// Set `add` to true to show form
 												setAdd(true);
@@ -73,7 +73,7 @@ export default function Education({school, onChangeSchool, degree,
 												onEdit(item.id);
 												setEditId(item.id);
 											}} />
-										<img src={deleteIcon} className='delete-icon'
+										<img src={deleteIcon} className='delete-icon icon'
 											alt="Delete Icon" onClick={() => onDelete(item.id)} />
 									</div>
 								</li>
