@@ -6,7 +6,7 @@ import Header from './components/Head';
 import Doc from './components/Doc';
 import Education from './components/Education';
 import Dropdown from './components/Dropdown';
-import Experience from './components/experience';
+import Experience from './components/Experience';
 import Customize from './components/Customize';
 
 /**
