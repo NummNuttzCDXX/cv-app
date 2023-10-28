@@ -6,6 +6,8 @@ End: 10/28/23
 A CV, or Resume like, application to show a summary of your career, qualifications, education, etc.
 This application is an assignment through TOP's (The Odin Project) curriculum, to demonstrate the basics of React.js
 
+[Live View](https://cv-app-ruddy-beta.vercel.app/)
+
 ## Description
 Fill the page with your information, add schools and work experience, and watch the Document automatically fill in with your newly created resume.
 
