@@ -2,6 +2,8 @@
 // This will be the Document that the inputs get displayed on
 import '../styles/Doc.css';
 import {formatDate} from '../modules/utility.js';
+import phoneIcon from '../assets/phone.svg';
+import emailIcon from '../assets/email.svg';
 
 export default function Doc({fullName, email, phone, educationArr, expArr,
 	alignment, accentColor, font, fontSize, headFontColor}) {
@@ -18,8 +20,14 @@ export default function Doc({fullName, email, phone, educationArr, expArr,
 		<div className={`document ${alignment} ${font}`} style={styles} >
 			<div className="head" style={headstyles} >
 				<div className="contact">
-					<div className="email">{email}</div>
-					<div className="phone">{phone}</div>
+					<div className="email">
+						<img src={emailIcon} className='icon' alt='Email'/>
+						{email}
+					</div>
+					<div className="phone">
+						<img src={phoneIcon} className='icon' alt='Phone' />
+						{phone}
+					</div>
 				</div>
 
 				<div className="name">{fullName}</div>

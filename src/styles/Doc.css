@@ -51,6 +51,19 @@
 	color: var(--secondary-accent);
 }
 
+.phone, .email {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	gap: .5rem;
+}
+
+.document .head .icon {
+	width: 1.5em;
+	filter: invert(36%) sepia(57%) saturate(1554%) hue-rotate(216deg) brightness(107%) contrast(102%);
+}
+
 .document .content {
 	flex: 1;
 }
