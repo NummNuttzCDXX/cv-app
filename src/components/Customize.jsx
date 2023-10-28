@@ -4,7 +4,7 @@ import {useState} from 'react';
 import '../styles/Customize.css';
 
 function Customize({handleAlignment, color, handleColor,
-	handleFont, fontSize, handleFontSize}) {
+	handleFont, fontSize, handleFontSize, headFontColor, handleHeadFontColor}) {
 	// Declare whether corrosponding settings are open
 	const [openAlign, setOpenAlign] = useState(false);
 	const [openColor, setOpenColor] = useState(false);
@@ -79,10 +79,17 @@ function Customize({handleAlignment, color, handleColor,
 						</button>
 					</div>
 
-					<label> Font Size:
-						<input type='number' value={fontSize}
-							onChange={handleFontSize} />
-					</label>
+					<div className="font-styles">
+						<label> Font Size:
+							<input type='number' value={fontSize}
+								onChange={handleFontSize} />
+						</label>
+
+						<label> Heading Font Color:
+							<input type='color' value={headFontColor}
+								onChange={handleHeadFontColor} />
+						</label>
+					</div>
 				</div>
 			}
 		</>

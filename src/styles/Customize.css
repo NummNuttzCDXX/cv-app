@@ -14,6 +14,9 @@ nav + div {
 	flex-direction: row;
 	justify-content: center;
 	gap: 1rem;
+
+	animation: dropdown .3s ease;
+	transform-origin: top;
 }
 
 .alignment button {
@@ -45,7 +48,7 @@ nav + div {
 	align-items: center;
 }
 
-.color input {
+.customize input[type='color'] {
 	appearance: none;
 
 	width: 2.5rem;
@@ -56,12 +59,12 @@ nav + div {
 	background-color: transparent;
 }
 
-.color input::-webkit-color-swatch {
+.customize input[type='color']::-webkit-color-swatch {
 	border-radius: 50%;
 	border: .1rem solid var(--accent-white);
 }
 
-.color input::-moz-color-swatch {
+.customize input[type='color']::-moz-color-swatch {
 	border-radius: 50%;
 	border: .1rem solid var(--accent-white);
 }
@@ -77,7 +80,7 @@ nav + div {
 	height: 1.1em;
 }
 
-.select-font {
+.select-font, .font-styles {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;

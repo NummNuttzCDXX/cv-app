@@ -244,6 +244,7 @@ function App() {
 	const [color, setColor] = useState('#383838');
 	const [font, setFont] = useState('archivo');
 	const [fontSize, setFontSize] = useState(16);
+	const [headFontColor, setHeadFontColor] = useState('');
 
 	// Customize component Event/State handlers Module
 	// For organization
@@ -264,7 +265,11 @@ function App() {
 			setFont(e.target.value);
 		}
 
-		return {alignment, color, fontSize, font};
+		function headFontColor(e) {
+			setHeadFontColor(e.target.value);
+		}
+
+		return {alignment, color, fontSize, font, headFontColor};
 	})();
 
 	return (
@@ -318,7 +323,9 @@ function App() {
 						<Customize handleAlignment={customizeHandlers.alignment}
 							color={color} handleColor={customizeHandlers.color}
 							handleFont={customizeHandlers.font}
-							fontSize={fontSize} handleFontSize={customizeHandlers.fontSize} />
+							fontSize={fontSize} handleFontSize={customizeHandlers.fontSize}
+							headFontColor={headFontColor}
+							handleHeadFontColor={customizeHandlers.headFontColor} />
 					</Dropdown>
 				</div>
 
@@ -330,7 +337,7 @@ function App() {
 					expArr={expArr}
 					alignment={alignment}
 					accentColor={color}
-					font={font} fontSize={fontSize} />
+					font={font} fontSize={fontSize} headFontColor={headFontColor} />
 			</main>
 		</>
 	);

@@ -63,7 +63,10 @@
 }
 
 .document h2 {
+	padding: 0.2em .5em;
 	grid-column: 1 / -1;
+	background-color: #b9b9b9d2;
+	color: var(--accent-white);
 }
 
 .document ul {
